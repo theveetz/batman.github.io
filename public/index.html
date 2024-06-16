@@ -13,38 +13,12 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
         }
 
-        .navbar {
-            background-color: #007BFF;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar a {
-            color: #fff;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
         .main-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .content-box {
             background-color: #fff;
             border-radius: 10px;
             padding: 30px;
@@ -54,13 +28,18 @@
             text-align: center;
         }
 
-        .content-box h1 {
+        .main-content img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .main-content h1 {
             color: #333;
             font-size: 2em;
             margin-bottom: 20px;
         }
 
-        .content-box p {
+        .main-content p {
             font-size: 1.2em;
             color: #666;
             margin-bottom: 40px;
@@ -84,28 +63,17 @@
         .button-container a:hover {
             background-color: #0056b3;
         }
-
-        .footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
-        </div>
-    </div>
     <div class="main-content">
-         <img src="images/logo.png.png" alt="Logo" style="height: 40px;">
-        <div class="content-box">
-            <h1>Welcome to Our Public Page</h1>
-            <p>This is a public page where you can learn more about our services and navigate to other parts of the site.</p>
-            <div class="button-container">
-                <a href="register.html">Register</a>
-                <a href="login.html">Login</a>
-            </div>
-
+        <img src="images/logo.png" alt="Logo">
+        <h1>Welcome to Our Public Page</h1>
+        <p>This is a public page where you can learn more about our services and navigate to other parts of the site.</p>
+        <div class="button-container">
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+        </div>
     </div>
 </body>
 </html>
