@@ -20,7 +20,21 @@
         <p id="successMessage" class="success-message" style="display:none;">Registration successful! Redirecting to login...</p>
         <button onclick="window.location.href='index.html'" class="back-button">Back to Home</button>
     </div>
-    <script src="js/api.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const newUser = { username, password };
+
+            // Simulate writing to the database by logging the user to the console
+            console.log('User written to the database:', newUser);
+
+            document.getElementById('successMessage').style.display = 'block';
+            setTimeout(function() {
+                window.location.href = 'login.html';
+            }, 2000); // Redirect after 2 seconds
+        });
+    </script>
 </body>
 </html>
