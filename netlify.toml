@@ -1,7 +1,7 @@
 [build]
   base = "/"
-  publish = "build"
-  command = "npm run build"
+  publish = "public"  # Adjust this to the directory containing your static files (e.g., HTML, CSS, JS)
+  # No build command
 
 [[redirects]]
   from = "/*"
