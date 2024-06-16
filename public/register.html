@@ -20,20 +20,6 @@
         <p id="successMessage" class="success-message" style="display:none;">Registration successful! Redirecting to login...</p>
         <button onclick="window.location.href='index.html'" class="back-button">Back to Home</button>
     </div>
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const newUser = { username, password };
-
-            console.log('User registered:', newUser);
-
-            document.getElementById('successMessage').style.display = 'block';
-            setTimeout(function() {
-                window.location.href = 'login.html';
-            }, 2000); // Redirect after 2 seconds
-        });
-    </script>
+    <script src="js/api.js"></script>
 </body>
 </html>
