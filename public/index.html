@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="css/styles.css">
     <style>
         /* Additional styles for the public page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
         .navbar {
             background-color: #007BFF;
             padding: 10px 0;
@@ -48,6 +55,7 @@
         .content p {
             font-size: 1.2em;
             color: #666;
+            margin-bottom: 40px;
         }
 
         .content a {
@@ -68,20 +76,24 @@
             display: flex;
             overflow: hidden;
             margin: 20px 0;
+            justify-content: center;
         }
 
         .carousel-item {
-            min-width: 100%;
+            min-width: 300px;
+            max-width: 300px;
             transition: transform 0.5s ease-in-out;
+            margin: 0 10px;
         }
 
         .carousel img {
             width: 100%;
             height: auto;
+            border-radius: 10px;
         }
 
         .carousel-buttons {
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .carousel-button {
