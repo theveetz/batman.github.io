@@ -7,10 +7,26 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="dashboard-container">
         <img src="images/logo.png" alt="Logo" class="logo">
         <h1>Dashboard</h1>
-        <p>Welcome to your dashboard, [Username]!</p>
+        <div class="dashboard-content">
+            <section class="user-profile">
+                <h2>User Profile</h2>
+                <p>Welcome, [Username]!</p>
+                <p>This is a demonstration of an additional feature for admin users.</p>
+            </section>
+            <section class="settings">
+                <h2>Settings</h2>
+                <p>Manage your account settings here.</p>
+                <!-- Add more settings elements here -->
+            </section>
+            <section class="appearance">
+                <h2>Appearance</h2>
+                <p>Customize the appearance of your dashboard.</p>
+                <!-- Add appearance customization elements here -->
+            </section>
+        </div>
         <button onclick="window.location.href='index.html'" class="back-button">Log Out</button>
     </div>
     <script src="js/script.js"></script>
