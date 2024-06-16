@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .dashboard-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .dashboard-item {
+            background-color: #f4f4f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-item h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-item p {
+            color: #666;
+            font-size: 1em;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -23,6 +53,10 @@
             <div class="dashboard-item">
                 <h2>Manage Users</h2>
                 <p>View and manage all users.</p>
+            </div>
+            <div class="dashboard-item">
+                <h2>Profile Settings</h2>
+                <p>Update your profile and personal information.</p>
             </div>
         </div>
     </div>
