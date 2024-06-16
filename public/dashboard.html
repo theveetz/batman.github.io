@@ -5,70 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .dashboard-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .dashboard-item {
-            background-color: #f4f4f9;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            width: 30%;
-            margin: 10px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .dashboard-item h2 {
-            color: #333;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .dashboard-item p {
-            color: #666;
-            font-size: 1em;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <img src="images/logo.png.png" alt="Logo" class="logo">
+        <img src="images/logo.png" alt="Logo" class="logo">
         <h1>Dashboard</h1>
-        <p>Welcome to your dashboard, <span id="username"></span>!</p>
-        <div class="dashboard-content">
-            <div class="dashboard-item">
-                <h2>Admin Panel</h2>
-                <p>Manage users, settings, and more.</p>
-            </div>
-            <div class="dashboard-item">
-                <h2>Settings</h2>
-                <p>Customize your preferences.</p>
-            </div>
-            <div class="dashboard-item">
-                <h2>Manage Users</h2>
-                <p>View and manage all users.</p>
-            </div>
-            <div class="dashboard-item">
-                <h2>Profile Settings</h2>
-                <p>Update your profile and personal information.</p>
-            </div>
+        <div class="dashboard-options">
+            <div class="dashboard-option" onclick="window.location.href='profile.html'">Profile</div>
+            <div class="dashboard-option" onclick="window.location.href='settings.html'">Settings</div>
+            <div class="dashboard-option" onclick="window.location.href='users.html'">Manage Users</div>
+            <div class="dashboard-option" onclick="window.location.href='admin.html'">Admin Panel</div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const username = localStorage.getItem('currentUser');
-            if (username) {
-                document.getElementById('username').textContent = username;
-            } else {
-                window.location.href = 'login.html';
-            }
-        });
-    </script>
 </body>
+</html>
+
 </html>
