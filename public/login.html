@@ -17,23 +17,4 @@
             <input type="password" id="password" name="password" required>
             <button type="submit">Login</button>
         </form>
-        <p class="note">Don't have an account? <a href="register.html">Register here</a></p>
-    </div>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // For demonstration purposes, assume user is registered with these credentials
-            const registeredUser = { username: 'testuser', password: 'testpassword' };
-
-            if (username === registeredUser.username && password === registeredUser.password) {
-                window.location.href = 'dashboard.html';
-            } else {
-                alert('Invalid username or password');
-            }
-        });
-    </script>
-</body>
-</html>
+        <p class="note">Don't have an account? <a href="register.html">
