@@ -10,8 +10,35 @@
     <div class="container">
         <img src="images/logo.png" alt="Logo" class="logo">
         <h1>Dashboard</h1>
-        <p>Welcome to your dashboard!</p>
+        <nav>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('adminPanel')">Admin Panel</button>
+            <button onclick="showSection('settings')">Settings</button>
+            <button onclick="showSection('manageUsers')">Manage Users</button>
+        </nav>
+        <div id="home" class="dashboard-section">
+            <h2>Welcome to your dashboard!</h2>
+        </div>
+        <div id="adminPanel" class="dashboard-section" style="display:none;">
+            <h2>Admin Panel</h2>
+            <p>This is the admin panel.</p>
+        </div>
+        <div id="settings" class="dashboard-section" style="display:none;">
+            <h2>Settings</h2>
+            <p>Manage your settings here.</p>
+        </div>
+        <div id="manageUsers" class="dashboard-section" style="display:none;">
+            <h2>Manage Users</h2>
+            <p>Manage users here.</p>
+        </div>
         <button onclick="window.location.href='index.html'" class="back-button">Log Out</button>
     </div>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.dashboard-section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
