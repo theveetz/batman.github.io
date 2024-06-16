@@ -95,3 +95,10 @@ button:hover {
 .back-button:hover {
     background-color: #5a6268;
 }
+
+/* Additional CSS */
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
+}
