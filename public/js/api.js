@@ -1,23 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mock API functions
-    function readUsers() {
-        return fetch('mock-api/users.json')
-            .then(response => response.json())
-            .then(data => data)
-            .catch(error => console.error('Error reading users:', error));
-    }
-
-    function writeUser(user) {
-        // Simulate writing to the database by logging the user to the console
-        console.log('User written to the database:', user);
-
-        // Update the users.json file (for demonstration, we'll use localStorage to simulate this)
-        readUsers().then(users => {
-            users.push(user);
-            localStorage.setItem('users', JSON.stringify(users));
-        });
-    }
-
     // Initialize mock database in localStorage
     if (!localStorage.getItem('users')) {
         localStorage.setItem('users', JSON.stringify([
@@ -28,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ]));
     }
 
-    // Override readUsers to read from localStorage for this demo
+    // Read users from the mock database
     function readUsers() {
         return new Promise((resolve, reject) => {
             const users = JSON.parse(localStorage.getItem('users'));
@@ -37,6 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 reject('No users found');
             }
+        });
+    }
+
+    // Write a new user to the mock database
+    function writeUser(user) {
+        readUsers().then(users => {
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+            console.log('User written to the database:', user);
         });
     }
 
@@ -69,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             readUsers().then(users => {
                 const user = users.find(user => user.username === username && user.password === password);
                 if (user) {
+                    localStorage.setItem('currentUser', username);
                     window.location.href = 'dashboard.html';
                 } else {
                     alert('Invalid username or password');
