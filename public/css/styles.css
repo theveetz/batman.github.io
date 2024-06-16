@@ -31,14 +31,17 @@ h1 {
     font-size: 2em;
 }
 
-nav a {
+nav a, nav button {
     margin: 0 10px;
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-nav a:hover {
+nav a:hover, nav button:hover {
     text-decoration: underline;
 }
 
@@ -116,3 +119,8 @@ button:hover {
 .note a:hover {
     text-decoration: underline;
 }
+
+.dashboard-section {
+    margin-top: 20px;
+}
+
