@@ -19,26 +19,6 @@
         </form>
         <p class="note">Don't have an account? <a href="register.html">Register here</a></p>
     </div>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            console.log('Attempting login with:', username, password); // Debugging log
-
-            // Hardcoded username and password for demonstration purposes
-            const hardcodedUsername = 'testuser';
-            const hardcodedPassword = 'testpassword';
-
-            if (username === hardcodedUsername && password === hardcodedPassword) {
-                console.log('Login successful'); // Debugging log
-                window.location.href = 'dashboard.html';
-            } else {
-                console.log('Invalid username or password'); // Debugging log
-                alert('Invalid username or password');
-            }
-        });
-    </script>
+    <script src="js/api.js"></script>
 </body>
 </html>
