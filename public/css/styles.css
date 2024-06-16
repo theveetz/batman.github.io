@@ -20,10 +20,23 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+.dashboard-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo, .dashboard-logo {
     width: 100px;
     height: auto;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
+    display: block;
 }
 
 h1 {
@@ -47,7 +60,7 @@ input {
     border: 1px solid #ccc;
 }
 
-.button, .back-button {
+.button, .back-button, .logout-button {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -57,12 +70,18 @@ input {
     transition: background-color 0.3s;
 }
 
-.button:hover, .back-button:hover {
+.button:hover, .back-button:hover, .logout-button:hover {
     background-color: #0056b3;
 }
 
 .back-button {
-    margin-top: 20px; /* Add margin to the top of the back button */
+    margin-top: 20px;
+}
+
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .dashboard-options {
