@@ -19,7 +19,24 @@
         </form>
         <p class="note">Don't have an account? <a href="register.html">Register here</a></p>
     </div>
-    <script src="js/api.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('mock-api/users.json')
+                .then(response => response.json())
+                .then(users => {
+                    const user = users.find(user => user.username === username && user.password === password);
+                    if (user) {
+                        window.location.href = 'dashboard.html';
+                    } else {
+                        alert('Invalid username or password');
+                    }
+                })
+                .catch(error => console.error('Error fetching users:', error));
+        });
+    </script>
 </body>
 </html>
