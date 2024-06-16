@@ -7,17 +7,25 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="dashboard-container">
         <img src="images/logo.png" alt="Logo" class="logo">
         <h1>Dashboard</h1>
-        <nav>
-            <button onclick="showSection('home')">Home</button>
-            <button onclick="showSection('adminPanel')">Admin Panel</button>
-            <button onclick="showSection('settings')">Settings</button>
-            <button onclick="showSection('manageUsers')">Manage Users</button>
-        </nav>
-        <div id="home" class="dashboard-section">
-            <h2>Welcome to your dashboard!</h2>
+        <div class="dashboard-content">
+            <div class="dashboard-home">
+                <h2>Welcome to your dashboard!</h2>
+            </div>
+            <div class="dashboard-box" onclick="showSection('adminPanel')">
+                <h2>Admin Panel</h2>
+                <p>Manage administrative tasks.</p>
+            </div>
+            <div class="dashboard-box" onclick="showSection('settings')">
+                <h2>Settings</h2>
+                <p>Customize your preferences.</p>
+            </div>
+            <div class="dashboard-box" onclick="showSection('manageUsers')">
+                <h2>Manage Users</h2>
+                <p>View and manage user accounts.</p>
+            </div>
         </div>
         <div id="adminPanel" class="dashboard-section" style="display:none;">
             <h2>Admin Panel</h2>
