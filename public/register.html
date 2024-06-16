@@ -17,7 +17,7 @@
             <input type="password" id="password" name="password" required>
             <button type="submit">Register</button>
         </form>
-        <p id="successMessage" class="success-message" style="display:none;">Registration successful!</p>
+        <p id="successMessage" class="success-message" style="display:none;">Registration successful! Redirecting to login...</p>
         <button onclick="window.location.href='index.html'" class="back-button">Back to Home</button>
     </div>
     <script src="js/script.js"></script>
@@ -25,6 +25,9 @@
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault();
             document.getElementById('successMessage').style.display = 'block';
+            setTimeout(function() {
+                window.location.href = 'login.html';
+            }, 2000); // Redirect after 2 seconds
         });
     </script>
 </body>
