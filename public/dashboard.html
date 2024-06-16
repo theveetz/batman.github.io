@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <img src="images/logo.png" alt="Logo" class="logo">
+    <div class="dashboard-container">
+        <img src="images/logo.png" alt="Logo" class="dashboard-logo">
+        <button class="logout-button" onclick="logout()">Logout</button>
         <h1>Dashboard</h1>
         <div class="dashboard-options">
             <div class="dashboard-option" onclick="window.location.href='profile.html'">Profile</div>
@@ -17,6 +18,14 @@
             <div class="dashboard-option" onclick="window.location.href='admin.html'">Admin Panel</div>
         </div>
     </div>
+    <script>
+        function logout() {
+            // Clear any authentication data here
+            alert('Logged out');
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html>
+
 
