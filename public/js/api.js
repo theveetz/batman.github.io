@@ -1,45 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize mock database in localStorage
-    if (!localStorage.getItem('users')) {
-        localStorage.setItem('users', JSON.stringify([
-            {
-                "username": "testuser",
-                "password": "testpassword"
-            }
-        ]));
-    }
-
-    // Read users from the mock database
-    function readUsers() {
-        return new Promise((resolve, reject) => {
-            const users = JSON.parse(localStorage.getItem('users'));
-            if (users) {
-                resolve(users);
-            } else {
-                reject('No users found');
-            }
+    // Write a new user to the backend
+    async function writeUser(user) {
+        const response = await fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
         });
-    }
-
-    // Write a new user to the mock database
-    function writeUser(user) {
-        readUsers().then(users => {
-            users.push(user);
-            localStorage.setItem('users', JSON.stringify(users));
-            console.log('User written to the database:', user);
-        });
+        return response.json();
     }
 
     // Registration form submission
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
-        registerForm.addEventListener('submit', function(event) {
+        registerForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             const newUser = { username, password };
 
-            writeUser(newUser);
+            await writeUser(newUser);
 
             document.getElementById('successMessage').style.display = 'block';
             setTimeout(function() {
@@ -51,20 +32,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Login form submission
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
+        loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            readUsers().then(users => {
-                const user = users.find(user => user.username === username && user.password === password);
-                if (user) {
-                    localStorage.setItem('currentUser', username);
-                    window.location.href = 'dashboard.html';
-                } else {
-                    alert('Invalid username or password');
-                }
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
             });
+            const data = await response.json();
+
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Invalid username or password');
+            }
         });
     }
 });
+
