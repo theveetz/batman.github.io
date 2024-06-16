@@ -1,73 +1,62 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
+const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const usersFilePath = path.join(__dirname, 'users.json');
 
 // Middleware
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
-// MySQL connection
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'mydatabase'
-});
+// Helper functions to read and write users data
+const readUsers = () => {
+    const usersData = fs.readFileSync(usersFilePath, 'utf-8');
+    return JSON.parse(usersData);
+};
 
-db.connect(err => {
-    if (err) throw err;
-    console.log('Connected to MySQL');
-});
-
-// User model
-const userModel = {
-    findOne: (username, callback) => {
-        db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
-            if (err) return callback(err);
-            callback(null, results[0]);
-        });
-    },
-    create: (user, callback) => {
-        db.query('INSERT INTO users SET ?', user, (err, results) => {
-            if (err) return callback(err);
-            callback(null, results);
-        });
-    }
+const writeUsers = (users) => {
+    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 };
 
 // Routes
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
+    const users = readUsers();
+    const userExists = users.find(user => user.username === username);
+
+    if (userExists) {
+        return res.status(400).json({ error: 'Username already exists' });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = { username, password: hashedPassword };
 
-    userModel.create(newUser, (err, result) => {
-        if (err) {
-            return res.status(400).json({ error: 'User registration failed' });
-        }
-        res.status(201).json({ message: 'User registered successfully' });
-    });
+    users.push(newUser);
+    writeUsers(users);
+
+    res.status(201).json({ message: 'User registered successfully' });
 });
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    userModel.findOne(username, async (err, user) => {
-        if (err || !user) {
-            return res.status(400).json({ error: 'Invalid username or password' });
-        }
+    const users = readUsers();
+    const user = users.find(user => user.username === username);
 
-        const isMatch = await bcrypt.compare(password, user.password);
+    if (!user) {
+        return res.status(400).json({ error: 'Invalid username or password' });
+    }
+
+    bcrypt.compare(password, user.password, (err, isMatch) => {
         if (!isMatch) {
             return res.status(400).json({ error: 'Invalid username or password' });
         }
 
-        const token = jwt.sign({ id: user.id }, 'secretkey', { expiresIn: '1h' });
+        const token = jwt.sign({ id: username }, 'secretkey', { expiresIn: '1h' });
         res.json({ token });
     });
 });
