@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="images/nobglogo.png" alt="Logo" class="logo">
+        <img src="images/logo.png" alt="Logo" class="logo">
         <h1>Register</h1>
         <form id="register-form">
             <label for="username">Username:</label>
@@ -25,38 +25,43 @@
             <input type="text" id="company" name="company">
             <label for="address">Address:</label>
             <input type="text" id="address" name="address">
-            <label for="dob">Date of Birth:</label>
-            <div class="dob-container">
-                <select id="dob-month" name="dob-month" required>
-                    <option value="">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
-                <select id="dob-day" name="dob-day" required>
-                    <option value="">Day</option>
-                    <!-- Add options for days 1 to 31 -->
-                    ${Array.from({ length: 31 }, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
-                </select>
-                <select id="dob-year" name="dob-year" required>
-                    <option value="">Year</option>
-                    <!-- Add options for years from 1973 to 2005 -->
-                    ${Array.from({ length: 2005 - 1973 + 1 }, (_, i) => `<option value="${1973 + i}">${1973 + i}</option>`).join('')}
-                </select>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <div class="dob-selectors">
+                    <select name="dob-month" required>
+                        <option value="" disabled selected>Month</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select name="dob-day" required>
+                        <option value="" disabled selected>Day</option>
+                        <!-- List days 1 to 31 -->
+                        <?php for ($i = 1; $i <= 31; $i++): ?>
+                            <option value="<?= sprintf("%02d", $i); ?>"><?= $i; ?></option>
+                        <?php endfor; ?>
+                    </select>
+                    <select name="dob-year" required>
+                        <option value="" disabled selected>Year</option>
+                        <!-- List years 1975 to 2005 -->
+                        <?php for ($i = 1975; $i <= 2005; $i++): ?>
+                            <option value="<?= $i; ?>"><?= $i; ?></option>
+                        <?php endfor; ?>
+                    </select>
+                </div>
             </div>
             <button type="submit" class="button">Register</button>
         </form>
         <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
-        <button class="back-button" onclick="window.location.href='login.html'">Back to Login</button>
     </div>
     <script>
         document.getElementById('register-form').addEventListener('submit', function(event) {
