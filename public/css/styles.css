@@ -4,83 +4,22 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.container {
+/* Dashboard Styles */
+.dashboard-container {
     width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
+    max-width: 1200px;
+    background-color: #f0f0f0;
     border-radius: 16px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-form {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-label {
-    text-align: left;
-}
-
-input, select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.dob-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.dob-container select {
-    flex: 1;
-}
-
-.button, .back-button, .logout-button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover, .back-button:hover, .logout-button:hover {
-    background-color: #0056b3;
-}
-
-.back-button {
-    margin-top: 20px;
-}
-
-.success-message {
-    color: green;
-    margin-top: 10px;
-}
-
-/* Profile Page Styles */
-.profile-container {
-    display: flex;
-    height: 100vh;
+    overflow: hidden;
+    padding: 20px;
 }
 
 .sidebar {
@@ -92,12 +31,12 @@ input, select {
 
 .sidebar-header {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .sidebar-logo {
     width: 50px;
     height: auto;
-    margin-bottom: 10px;
 }
 
 .sidebar-nav ul {
@@ -113,6 +52,7 @@ input, select {
     text-decoration: none;
     color: #333;
     font-size: 16px;
+    display: block;
 }
 
 .sidebar-nav .active a {
@@ -150,20 +90,26 @@ input, select {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
 }
 
 .profile-section {
     display: flex;
-    justify-content: space-between;
     gap: 20px;
 }
 
 .profile-card, .account-card, .bills-card {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex: 1;
+}
+
+.profile-card {
+    flex: 2;
 }
 
 .profile-card .profile-pic {
@@ -223,6 +169,78 @@ input, select {
     color: white;
 }
 
+/* Registration Page Styles */
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-align: left;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.dob-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dob-container select {
+    flex: 1;
+}
+
+.button, .back-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover, .back-button:hover {
+    background-color: #0056b3;
+}
+
+.back-button {
+    margin-top: 20px;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+}
+
 /* Index Page Styles */
 .index-container {
     width: 90%;
@@ -256,3 +274,4 @@ input, select {
     color: #333;
     margin-top: 20px;
 }
+
