@@ -38,9 +38,75 @@ body {
 }
 
 .logo {
-    width: 80px; /* Reduced size for logo */
-    height: auto; /* Ensures the logo maintains its aspect ratio */
+    width: 80px; /* Ensures the logo maintains its aspect ratio */
+    height: auto;
     margin-bottom: 20px;
+}
+
+/* Container Styles for Forms and 404 Page */
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-align: left;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.dob-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dob-container select {
+    flex: 1;
+}
+
+.button, .back-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover, .back-button:hover {
+    background-color: #0056b3;
+}
+
+.back-button {
+    margin-top: 20px;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
 }
 
 /* Dashboard Styles */
@@ -69,6 +135,11 @@ body {
 .dashboard-header .logo {
     width: 80px; /* Adjusted size to be smaller */
     height: auto;
+    margin-right: auto; /* Aligns the logo to the left */
+}
+
+.dashboard-header .logout-button {
+    margin-left: auto; /* Aligns the logout button to the right */
 }
 
 .dashboard-options {
@@ -86,6 +157,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     box-sizing: border-box;
+    text-decoration: none; /* Remove underline from links */
 }
 
 .dashboard-option:hover {
@@ -117,146 +189,10 @@ body {
     background-color: #0056b3;
 }
 
-/* Registration Page Styles */
-.container {
-    width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-label {
-    text-align: left;
-}
-
-input, select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.dob-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.dob-container select {
-    flex: 1;
-}
-
-.button, .back-button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover, .back-button:hover {
-    background-color: #0056b3;
-}
-
-.back-button {
-    margin-top: 20px;
-}
-
-.success-message {
-    color: green;
-    margin-top: 10px;
-}
-
-/* Login Page Styles */
-.container {
-    width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-label {
-    text-align: left;
-}
-
-input, select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.dob-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.dob-container select {
-    flex: 1;
-}
-
-.button, .back-button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover, .back-button:hover {
-    background-color: #0056b3;
-}
-
-.back-button {
-    margin-top: 20px;
-}
-
-.success-message {
-    color: green;
-    margin-top: 10px;
-}
-
 /* 404 Page Styles */
 .page-not-found {
     font-size: 24px;
     color: #333;
     margin-top: 20px;
-}
-
-.back-button:hover {
-    background-color: #5a6268;
 }
 
