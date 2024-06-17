@@ -2,12 +2,13 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px 0; /* Added padding to the top and bottom */
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    box-sizing: border-box; /* Ensure padding is included in the height */
 }
 
 .container {
