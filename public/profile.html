@@ -3,74 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="dashboard-container">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <img src="images/logo.png" alt="Logo" class="sidebar-logo">
-            </div>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Users</a></li>
-                    <li><a href="#">Admin</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <main class="main-content">
-            <header class="header">
-                <div class="header-profile">
-                    <img src="images/profile-pic.png" alt="User" class="header-profile-pic">
-                    <span>Hello Sami</span>
-                </div>
-            </header>
-            <section class="content">
-                <div class="profile-section">
-                    <div class="profile-card">
-                        <img src="images/profile-pic.png" alt="User" class="profile-pic">
-                        <div class="profile-details">
-                            <h3>My profile</h3>
-                            <p>Last login: 07 Aug 2018 14:44</p>
-                            <p>Workload: 80% (New York, US)</p>
-                            <p>Sami Rahman</p>
-                            <p>+1-555-555-1234</p>
-                            <p>sami.rahman2022@gmail.com</p>
-                            <button class="sms-alerts">SMS alerts activation</button>
-                            <button class="save-button">Save</button>
-                        </div>
-                    </div>
-                    <div class="account-card">
-                        <h3>My xPay accounts</h3>
-                        <div class="account-details">
-                            <p>Active account</p>
-                            <p>8430 5800 8050 4255</p>
-                            <button class="block-button">Block Account</button>
-                            <p>Blocked account</p>
-                            <button class="unblock-button">Unblock Account</button>
-                        </div>
-                    </div>
-                    <div class="bills-card">
-                        <h3>My bills</h3>
-                        <div class="bills-details">
-                            <p>Phone bill</p>
-                            <span class="status paid">Bill paid</span>
-                            <p>Internet bill</p>
-                            <span class="status unpaid">Bill not paid</span>
-                            <p>House rent</p>
-                            <span class="status paid">Bill paid</span>
-                            <p>Income tax</p>
-                            <span class="status unpaid">Bill not paid</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <div class="dashboard-logo">
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="dashboard-options">
+            <div class="dashboard-option">Profile</div>
+            <div class="dashboard-option">Settings</div>
+            <div class="dashboard-option">Manage Users</div>
+            <div class="dashboard-option">Admin Panel</div>
+        </div>
+        <button class="logout-button">Logout</button>
     </div>
 </body>
 </html>
+
