@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -20,23 +21,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-container {
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.logo, .dashboard-logo {
+.logo {
     width: 100px;
     height: auto;
-    margin: 0 auto 20px auto;
-    display: block;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -54,10 +42,20 @@ label {
     text-align: left;
 }
 
-input {
+input, select {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+.dob-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dob-container select {
+    flex: 1;
 }
 
 .button, .back-button, .logout-button {
@@ -76,6 +74,31 @@ input {
 
 .back-button {
     margin-top: 20px;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.dashboard-logo {
+    width: 100px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    display: block;
 }
 
 .logout-button {
@@ -104,13 +127,36 @@ input {
     background-color: #0056b3;
 }
 
-.note {
-    margin-top: 10px;
+/* Index Page Styles */
+.index-container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.success-message {
-    color: green;
-    margin-top: 10px;
+.index-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 0;
 }
 
+.index-button:hover {
+    background-color: #0056b3;
+}
 
+/* 404 Page Styles */
+.page-not-found {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
