@@ -66,6 +66,11 @@ body {
     margin-bottom: 20px;
 }
 
+.dashboard-header .logo {
+    width: 100px; /* Adjusted size to match the logo size on the login page */
+    height: auto;
+}
+
 .dashboard-options {
     display: flex;
     flex-direction: column;
@@ -250,3 +255,4 @@ input, select {
     color: #333;
     margin-top: 20px;
 }
+
