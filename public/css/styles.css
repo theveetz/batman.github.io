@@ -2,19 +2,19 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px 0; /* Added padding to the top and bottom */
+    padding: 40px 0; /* Increased padding to the top and bottom */
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 80px); /* Adjust height to account for padding */
     box-sizing: border-box; /* Ensure padding is included in the height */
 }
 
 .container {
     width: 90%;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 20px auto; /* Added margin to create space above and below the container */
     padding: 20px;
     text-align: center;
     background-color: #fff;
@@ -161,3 +161,4 @@ input, select {
     color: #333;
     margin-top: 20px;
 }
+
