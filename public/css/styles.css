@@ -38,7 +38,7 @@ body {
 }
 
 .logo {
-    width: 100px;
+    width: 80px; /* Reduced size for logo */
     height: auto; /* Ensures the logo maintains its aspect ratio */
     margin-bottom: 20px;
 }
@@ -46,7 +46,7 @@ body {
 /* Dashboard Styles */
 .dashboard-container {
     width: 90%;
-    max-width: 100px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
@@ -59,7 +59,7 @@ body {
 }
 
 .dashboard-header {
-    width: 600%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +67,7 @@ body {
 }
 
 .dashboard-header .logo {
-    width: 100px; /* Adjusted size to match the logo size on the login page */
+    width: 80px; /* Adjusted size to be smaller */
     height: auto;
 }
 
